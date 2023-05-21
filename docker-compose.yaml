@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  server:
+    build:
+      context: .
+    hostname: deploy-webhook
+    restart: unless-stopped
+    ports:
+      - '${TP_PORT:-8000}:8000'
